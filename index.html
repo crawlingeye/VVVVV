@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>VVVVV</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital@1&family=Dancing+Script&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="menu">
+        <img src="https://i.pinimg.com/564x/e9/55/83/e955839cd705cfff0f440a435b876904.jpg"/>
+        <h1>KEVIN CASTRO</h1>
+        <h2>vvvvv
+        </h2>
+        <p>These violent delights have violent ends and in their triumph die, like fire and powder; Which, as they kiss, consume.</p>
+        <input type="file" id="uploadInput" accept="image/*">
+        <button type="button" onclick="uploadImage()">Upload Image</button>
+        <div class="gallery" id="imageGallery">
+  <!-- Your existing images in the gallery -->
+
+  <script>
+    function uploadImage() {
+      const fileInput = document.getElementById('uploadInput');
+      const file = fileInput.files[0];
+    
+      if (!file) {
+        alert('Please select an image to upload.');
+        return;
+      }
+    
+      const reader = new FileReader();
+      reader.onload = function(event) {
+        const imageURL = event.target.result;
+    
+        // Save the uploaded image URL to Local Storage
+        const existingImages = localStorage.getItem('images') || '[]';
+        const images = JSON.parse(existingImages);
+        images.push(imageURL);
+        localStorage.setItem('images', JSON.stringify(images));
+    
+        // Display the uploaded image in the gallery
+        const imageGallery = document.getElementById('imageGallery');
+        const newImage = document.createElement('img');
+        newImage.src = imageURL;
+        imageGallery.appendChild(newImage);
+    
+        alert('Image uploaded successfully.');
+      };
+    
+      reader.readAsDataURL(file);
+    }
+    </script>
+        </div>
+
+            <div class="gallery">
+                <img src="https://64.media.tumblr.com/67a15e7fe9ef20d39e94de50d190708f/tumblr_myntsseZ3i1qezpouo1_500.jpg">
+                <img src="https://64.media.tumblr.com/5a1e9393b82b4d3cd9535c58d721d53e/tumblr_owar95AD1X1qa3aq2o1_540.jpg">
+                <img src="https://64.media.tumblr.com/d570e9d3fabc717353f03a99a6cc8c0e/aeeedef36e1d07fb-2e/s540x810/a365956591f42b6fb4b605ca7a76798bd4b62eaf.jpg">
+                <img src="https://64.media.tumblr.com/af245ab5df5f8337185bd110c23fc9a5/tumblr_p038s16dYb1ww8683o1_540.jpg">
+                <img src="https://64.media.tumblr.com/0d4df04d55a90a3ab2814f4058843e1c/e2411e5a9309ab29-95/s540x810/d46ba21326c70ee88c7ace64ff32155a31fdd9cc.jpg">
+                <img src="https://64.media.tumblr.com/ff0dee7e6a5c92fdf4f23d7ac92854fc/dca995b07a947f78-69/s540x810/794d5a44053a08ef009ec401ae45b18700e5a004.jpg">
+                <img src="https://64.media.tumblr.com/b1cdaeed45a8fa881081c02fe80e6091/1c6f65991e890256-a2/s540x810/bab9e85aa4ec9fdc41045f07f2c1aabc2368d4f7.jpg">
+                <img src="https://64.media.tumblr.com/68b582e3ac46c42f69adcd3bfb891e62/98a846213c89ac6c-f1/s540x810/bf534f283716dafa961fc1e9446129ef5bf5831b.jpg">
+                <img src="https://64.media.tumblr.com/98b78641646f2ff20b3e4878dba75674/9bf80c26762afab4-68/s540x810/b14c28db7eff81db68504e22bfb44b4a9a8eebbb.jpg">
+                <img src="https://64.media.tumblr.com/bc44eab58f4ef15109ab657d6800f6e3/tumblr_nsrpu6bc1m1tvnjqxo1_540.jpg">
+                <img src="https://64.media.tumblr.com/ab3eea7c5d57f91ddeca9eedda098a84/57b1384080be85d9-c6/s540x810/525f7eb18df0755ee7b72ba9f986e12a0745bf3d.jpg">
+                <img src="https://64.media.tumblr.com/bc41851b816c27d792913918f457edf9/d6029ab4618bab2a-5b/s540x810/bf6ffaaf84773fed41d0ae782aff35de7b092dbb.jpg">
+                <img src="https://64.media.tumblr.com/45a9b64e434965387ccb0df19b2edcce/8f10d52cc837ca3d-c7/s540x810/dd28d056beebccd4586b59ae4eefead079ec3f55.jpg">
+                <img src="https://64.media.tumblr.com/ea8d4827a4b341eeebba9a37465e5dda/40a945bb52f5d157-3b/s540x810/bb07be69316e8e4b32de8ed0904abe44f75e3717.jpg">
+                <img src="https://i.pinimg.com/564x/71/a2/cb/71a2cb4ee8883f1e3f1a1407bb86b616.jpg">
+                <img src="https://i.pinimg.com/564x/da/8d/26/da8d264d7088c22666771b43b8e1cb37.jpg">
+                <img src="https://64.media.tumblr.com/02b3c989618c88d5bac38bd1f8706b14/106f22a1c7339897-46/s540x810/e8cb86f4e742a091059b792a7f91a6f2de211d0c.jpg">
+                <img src="https://64.media.tumblr.com/460945f71be5519e5341ebe58617b1e9/2735e6051ec65983-fc/s540x810/9313e60493a437bd1d183af03c142a52eaf05b56.jpg">
+              </div> 
+
+
+    </div>
+    
+</body>
+</html>
