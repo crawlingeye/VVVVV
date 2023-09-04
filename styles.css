@@ -18,10 +18,10 @@ body {
 
 
 img {
-  width:100px;
-  height:100px;
-  display: block;
+  width:100%;
+  height:100%;
   margin: 0 auto;
+  display:block
 }
 
 
@@ -69,6 +69,14 @@ p {
   width: 445px;
 }
 
+.gallery img {
+  width: 100%;
+  max-width: 445px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 10px
+}
+
 #uploadInput {
   display: block;
   margin: 0 auto;
@@ -88,3 +96,50 @@ border-radius: 100px;
 text-align: center;
 }
 
+.gallery img {
+  width: 100%;
+  max-width: 445px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.2s linear; /* Add a smooth transition effect on hover */
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+.menu .popup {
+  object-fit: cover;
+  position: fixed;
+  top:0; left:0;
+  background: black;
+  height: 100%;
+  width:100%;
+  z-index: 100;
+  display:none
+}
+
+.menu .popup span{
+  position: absolute;
+  top:0; right:10px;
+  font-size:40px;
+  font-weight: bolder;
+  color: white;
+  cursor: pointer;
+  z-index: 100
+}
+
+.menu .popup img {
+  position: absolute;
+  top:50%; left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 15px;
+  width:750px;
+  object-fit: cover;
+}
+
+@media (max-width:768px){
+  .menu .popup img{
+    width:95%;
+  }}
