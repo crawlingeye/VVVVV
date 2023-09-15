@@ -10,14 +10,13 @@
 </head>
 <body>
   <div class="menu">
-      <h1>KEVIN CASTRO</h1>
+      <h1><a href="https://crawlingeye.github.io/Main/">KEVIN CASTRO</a></h1>
       <h2>VVVVV
       </h2>
 
         <input id="uploadInput" type="file" accept="image/*">
         <button id="uploadimage" type="button" onclick="uploadImage()"><i class="fa fa-camera" aria-hidden="true"></i></button>
         <div class="gallery" id="imageGallery">
-  <!-- Your existing images in the gallery -->
 
   <script>
     function uploadImage() {
@@ -33,13 +32,11 @@
       reader.onload = function(event) {
         const imageURL = event.target.result;
     
-        // Save the uploaded image URL to Local Storage
         const existingImages = localStorage.getItem('images') || '[]';
         const images = JSON.parse(existingImages);
         images.push(imageURL);
         localStorage.setItem('images', JSON.stringify(images));
     
-        // Display the uploaded image in the gallery
         const imageGallery = document.getElementById('imageGallery');
         const newImage = document.createElement('img');
         newImage.src = imageURL;
