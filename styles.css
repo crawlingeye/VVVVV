@@ -5,7 +5,7 @@ body {
 
 .menu {
   width: 80%;
-  background-color: rgb(31, 31, 31);
+  background-color: black;
   margin-left: auto;
   margin-right: auto;
   margin-top: -20px;
@@ -20,7 +20,7 @@ body {
 img {
   width:100%;
   height:100%;
-  margin: 0 auto;
+  margin: 0;
   display:block
 }
 
@@ -96,6 +96,9 @@ border-radius: 100px;
 text-align: center;
 }
 
+#uploadimage:hover {color:gray;
+background-color: white;}
+
 .gallery img {
   width: 100%;
   max-width: 445px;
@@ -139,7 +142,51 @@ text-align: center;
   object-fit: cover;
 }
 
-@media (max-width:768px){
-  .menu .popup img{
-    width:95%;
-  }}
+@media (max-width: 768px) {
+  /* CSS styles for screens up to 768px wide (e.g., typical tablets) */
+  .menu {
+    background-color:black;
+    width: 100%;
+    height: 100%;
+    margin: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 20px
+  }
+
+  .menu .popup {
+    object-fit: contain;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: black; /* Semi-transparent black background */
+    z-index: 100;
+    display: none;
+    overflow: auto; /* Allow scrolling if content overflows */
+  }
+  
+  .menu .popup span {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    z-index: 101; /* Above the popup background */
+  }
+  
+  .menu .popup img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 100%; /* Ensure the image doesn't exceed the popup width */
+    max-height: 100%; /* Ensure the image doesn't exceed the popup height */
+    width: auto; /* Allow the image to adjust its width */
+    height: auto; /* Allow the image to adjust its height */
+    border-radius: 15px;
+  }
+}
